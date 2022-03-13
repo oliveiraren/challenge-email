@@ -17,17 +17,14 @@ public class EmailService {
 
     private JavaMailSender javaMailSender;
 
-    public void sendEmail(Email email) throws MessagingException{
+    public void sendEmail(Email email) throws MessagingException {
         MimeMessage message = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message, true);
 
         mimeMessageHelper.setFrom(email.getFrom());
         mimeMessageHelper.setTo(email.getTo());
-
-        if (email.getType().equals(EMAIL_REGISTER.getText())) {
-            mimeMessageHelper.setSubject(SUBJECT_REGISTER.getText());
-            mimeMessageHelper.setText(TEXT_REGISTER.getText());
-        }
+        mimeMessageHelper.setSubject(SUBJECT_REGISTER.getText());
+        mimeMessageHelper.setText(TEXT_REGISTER.getText());
 
         javaMailSender.send(message);
     }
