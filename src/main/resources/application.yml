@@ -1,9 +1,9 @@
 spring:
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username:
-    password:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
 
     properties:
       mail:
@@ -16,8 +16,8 @@ spring:
           writetimeout: 5000
 
   rabbitmq:
-    addresses:
-    queue:
+    addresses: ${RABBITMQ_ADDRESSES}
+    queue: ${RABBITMQ_QUEUE}
 
-server:
-  port: 8081
+#server:
+#  port: 8081
