@@ -1,9 +1,7 @@
 package com.challenge.email.enumeration;
 
 public enum EmailEnum {
-    EMAIL_REGISTER("Cadastro"),
-    SUBJECT_REGISTER("Cadastro - Challenge HMV"),
-    TEXT_REGISTER("Cadastro realizado com sucesso!");
+    SUBJECT_REGISTER("Cadastro - Challenge HMV");
 
     private String enumText;
 
